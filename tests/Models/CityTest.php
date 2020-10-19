@@ -25,7 +25,7 @@ class CityTest extends TestCase
     /**
      * @test
      */
-    public function it_has_many_clubs(): void
+    public function it_can_be_has_many_clubs(): void
     {
         $city = factory(City::class)->create();
         $city->clubs()->createMany(

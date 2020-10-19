@@ -4,6 +4,7 @@ namespace Fh\Clubs\Tests\Models;
 
 use Fh\Clubs\Models\City;
 use Fh\Clubs\Models\Club;
+use Fh\Clubs\Models\ClubType;
 use Fh\Clubs\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Str;
@@ -44,5 +45,19 @@ class ClubTest extends TestCase
 
         $this->assertInstanceOf(City::class, $club->city);
         $this->assertEquals($club->city->id, $city->id);
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_be_belong_to_club_type(): void
+    {
+        $clubType = factory(ClubType::class)->create();
+        $club = factory(Club::class)->create([
+            'type_id' => $clubType->id
+        ]);
+
+        $this->assertInstanceOf(ClubType::class, $club->type);
+        $this->assertEquals($club->type->id, $clubType->id);
     }
 }

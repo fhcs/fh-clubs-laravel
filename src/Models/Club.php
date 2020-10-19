@@ -8,12 +8,16 @@ class Club extends Model
 {
     use NameAliasSlugTrait;
 
-    protected $guarded = [];
-
     public $incrementing = false;
+    protected $guarded = [];
 
     public function city()
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function type()
+    {
+        return $this->belongsTo(ClubType::class);
     }
 }

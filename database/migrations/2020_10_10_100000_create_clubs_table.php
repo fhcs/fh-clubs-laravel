@@ -30,6 +30,9 @@ class CreateClubsTable extends Migration
 
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
+
+            $table->unsignedBigInteger('type_id');
+            $table->foreign('type_id')->references('id')->on('club_types');
         });
     }
 

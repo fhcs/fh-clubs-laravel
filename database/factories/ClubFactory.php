@@ -5,6 +5,7 @@
 use Faker\Generator as Faker;
 use Fh\Clubs\Models\City;
 use Fh\Clubs\Models\Club;
+use Fh\Clubs\Models\ClubType;
 use Illuminate\Database\Eloquent\Factory;
 
 $factory->define(Club::class, function (Faker $faker) {
@@ -16,5 +17,6 @@ $factory->define(Club::class, function (Faker $faker) {
         'map_longitude' => $faker->longitude,
 
         'city_id' => factory(City::class)->create(),
+        'type_id' => factory(ClubType::class)->create(),
     ];
 });
