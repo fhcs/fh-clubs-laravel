@@ -22,6 +22,10 @@ class FhClubsProvider extends ServiceProvider
             __DIR__ . '/../database/migrations'
         );
 
+        $this->loadFactoriesFrom(
+            __DIR__ . '/../database/factories'
+        );
+
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
