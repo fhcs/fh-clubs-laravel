@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.2",
-        "vladmeh/rabbitmq-client": "dev-master"
+        "vladmeh/rabbitmq-client": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0|^8.0",
@@ -31,11 +31,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Fh\\Clubs\\ClubsProvider"
-            ],
-            "aliases": {
-
-            }
+                "Fh\\Clubs\\FhClubsProvider"
+            ]
         }
     }
 }

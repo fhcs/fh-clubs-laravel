@@ -13,11 +13,24 @@ class FhClubsProvider extends ServiceProvider
         );
     }
 
+    /**
+     * @return void
+     */
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/../config/clubs.php' => config_path('clubs.php'),
-        ], 'clubs');
-    }
+        $this->loadMigrationsFrom(
+            __DIR__ . '/../database/migrations'
+        );
 
+
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../config/clubs.php' => config_path('clubs.php'),
+            ], 'clubs-config');
+
+            $this->publishes([
+                __DIR__ . '/../database/migrations' => database_path('migrations'),
+            ], 'clubs-migrations');
+        }
+    }
 }
