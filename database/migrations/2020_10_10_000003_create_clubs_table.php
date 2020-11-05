@@ -23,8 +23,8 @@ class CreateClubsTable extends Migration
             $table->float('map_latitude', 16, 14)->default(0);
             $table->float('map_longitude', 17, 14)->default(0);
 
+            $table->boolean('active')->default(true);
             $table->integer('sorting')->default(0);
-            $table->boolean('enabled')->default(true);
 
             $table->timestamps();
 
