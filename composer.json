@@ -1,8 +1,9 @@
 {
     "name": "fitnesshouse/fh-clubs-laravel",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Fitness House Clubs",
     "license": "MIT",
+    "homepage": "https://github.com/fhcs/fh-clubs-laravel",
     "authors": [
         {
             "name": "Mikhaylov.V",
@@ -11,8 +12,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": "^7.2",
-        "vladmeh/rabbitmq-client": "^1.0"
+        "php": "^7.2"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0|^8.0",
